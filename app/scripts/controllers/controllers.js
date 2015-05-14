@@ -42,7 +42,7 @@ angular.module('basic.controllers', [])
 
 		if(foundImage === undefined) {
 			$http.post(
-				'http://tiny-pizza-server.herokuapp.com/collections/emoller-ang', {
+				'https://tiny-pizza-server.herokuapp.com/collections/emoller-ang', {
 					imgURL: img,
 					caption: imgCaption
 			})
@@ -65,7 +65,7 @@ angular.module('basic.controllers', [])
 
 	function getSubmit() {
 
-		var promise = $http.get('http://tiny-pizza-server.herokuapp.com/collections/emoller-ang')
+		var promise = $http.get('https://tiny-pizza-server.herokuapp.com/collections/emoller-ang')
 		.success(function(response) {
 
 			$scope.item = [];
