@@ -1,6 +1,6 @@
 /* app css stylesheet */
 
-.menu {
+/*.menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
@@ -27,4 +27,136 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}*/
+
+body {
+  margin: 0em;
+  /*background-color: #eee;*/
 }
+
+.ion-android-add-circle:before {
+  font-size: 2em;
+  height: 100%;
+  display: inline-block;
+  margin: 0.2em 3.5em;
+}
+
+.header {
+  height: 3em;
+  background-color: #0F68A3;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+  height: 15em;
+}
+
+.img {
+  display: block;
+  padding-left: 1em;
+  margin-top: 4em;
+  width: 96%;
+  height: 4em;
+}
+
+.img-caption {
+  display: block;
+  padding-left: 1em;
+  margin-top: 1em;
+  width: 96%;
+  height: 5em;
+}
+
+.button-wrapper {
+  margin-top: 1em;
+  width: 96%;
+}
+
+.button-container {
+  float: right;
+}
+
+.cancel-image {
+  width: 10em;
+  height: 5em;
+  background-color: #bbb;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  font-size: 0.8em;
+}
+
+.add-image {
+  width: 12em;
+  height: 5em;
+  background-color: #13AD53;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  font-size: 0.8em;
+  vertical-align: top;
+}
+
+.add-image p{
+  float: right;
+  margin-top: 1.2em;
+  padding-right: 1em;
+
+}
+
+.ion-image {
+  font-size: 3em;
+  float: left;
+  margin-left: 0.5em;
+}
+
+.photo-collection {
+  background-color: #ddd;
+  margin: 0 auto;
+}
+
+.photo-wrapper {
+  background-color: white;
+  width: 70%;
+  margin: 2em auto;
+  border: 2px solid #D4D4D4;
+  border-top: 0;
+  box-shadow: 0 0 1em #bbb;
+}
+
+.photo-wrapper img {
+  width: 100%;
+}
+
+.caption-wrapper {
+  height: 100%;
+  padding: 1.5em 2em;
+  color: #aaa;
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 768px) {
+
+.photo-collection {
+  background-color: #eee;
+  border-top: 2px solid #D4D4D4;
+}
+
+.photo-list {
+  background-color: #ddd;
+  margin: 0 auto;
+  width: 55em;
+  border: 2px solid #D4D4D4;
+  border-top: 0;
+}
+
+.photo-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+}
+
+

@@ -6,38 +6,61 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Image Gallery</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+<!--   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css"> -->
   <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <link rel="stylesheet" href="ionicons.css">
+<!--  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>-->
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<body ng-controller="loadingCtrl">
+    <!-- blue header at the top -->
+        <div class="header">
+            <div ng-click="menuCollapse()" class="ion-android-add-circle">
+            </div>
+        </div>
+    <!-- Wraps the img input, caption input, and buttons -->
+        <div ng-show="wrapper" class="wrapper">
+            <input type="text" class="img" ng-model="img" placeholder="Image URL">
+            <h3 ng-bind="emptyImgError"></h3>
+            <input class="img-caption" ng-model="imgCaption" placeholder="Image Caption">
+            <h3 ng-bind="emptyCapError"></h3>
+            <div class="button-wrapper">
+                <div class="button-container">
+                    <button class="cancel-image" ng-click="cancelImage()">Cancel</button>
+                    <button class="add-image" ng-click="sendData(img, imgCaption)">
+                        <p>Add Image</p>
+                        <div class="ion-image">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+    <!-- Sumbitted photos/captions display here -->
+        <div class="photo-collection">
+            <div class="photo-list">
+                <ul ng-repeat="picture in item">
+                    <div class="photo-wrapper">
+                        <img ng-src="{{ picture.imgURL }}">
+                        <div class="caption-wrapper">
+                        {{ picture.caption }}
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="scripts/controllers/controllers.js"></script>
+<!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<!--   // <script src="view1/view1.js"></script>
+  // <script src="view2/view2.js"></script>
+  // <script src="components/version/version.js"></script>
+  // <script src="components/version/version-directive.js"></script>
+  // <script src="components/version/interpolate-filter.js"></script> -->
 </body>
 </html>
